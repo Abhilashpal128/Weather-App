@@ -8,8 +8,8 @@ interface DayForecast {
       text: string;
     };
 
-    maxtemp_f: number;
-    mintemp_f: number;
+    maxtemp_c: number;
+    mintemp_c: number;
   };
 }
 
@@ -36,8 +36,8 @@ const WeekForeCast = ({ data }: WeekForecastProp) => {
           </p>
           <img src={day.day.condition.icon} alt={day.day.condition.text} />
           <div>
-            <p>H {day.day.maxtemp_f.toFixed()}°</p>
-            <p>L {day.day.mintemp_f.toFixed()}°</p>
+            <p>H {day.day.maxtemp_c.toFixed()}°</p>
+            <p>L {day.day.mintemp_c.toFixed()}°</p>
           </div>
         </div>
       ))}

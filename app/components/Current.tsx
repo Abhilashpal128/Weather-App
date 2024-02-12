@@ -3,23 +3,22 @@ import { getCurrentDate } from "../utils/CurrentDate";
 import { MdLocationOn } from "react-icons/md";
 
 interface CurrentProps {
-    data:{
-        current :{
-            condition :{
-                icon:string,
-                text:string
-            };
-            temp_f:number
-        };
-        location:{
-            name:string,
-            region:string
-        };
+  data: {
+    current: {
+      condition: {
+        icon: string;
+        text: string;
+      };
+      temp_c: number;
     };
+    location: {
+      name: string;
+      region: string;
+    };
+  };
 }
 
-
-const Current = ({ data }:CurrentProps) => {
+const Current = ({ data }: CurrentProps) => {
   const currentDate = getCurrentDate();
   const weatherIcon = data.current.condition.icon;
   return (
@@ -42,8 +41,9 @@ const Current = ({ data }:CurrentProps) => {
         </div>
         <div>
           <p className="text-5xl text-white">
-            {data.current.temp_f.toFixed()}
+            {data.current.temp_c.toFixed()}
             <span>°</span>
+            <span className="font-bold">C</span>
           </p>
 
           <span className="text-white">{data.current.condition.text}</span>
@@ -52,7 +52,7 @@ const Current = ({ data }:CurrentProps) => {
           <div className="flex items-center text-black bg-white/90 px-2 py-3 rounded-xl">
             <MdLocationOn />
             <span>
-                {data.location.name},{data.location.region}
+              {data.location.name},{data.location.region}
             </span>
           </div>
         </div>

@@ -13,7 +13,7 @@ interface WeatherDetailsProps {
       humidity: number;
       wind_dir: string;
       pressure_mb: number;
-      feelslike_f: number;
+      feelslike_c: number;
       vis_km: number;
     };
     forecast: {
@@ -28,6 +28,8 @@ interface WeatherDetailsProps {
 }
 
 const WeatherDetails = ({ data }: WeatherDetailsProps) => {
+  console.log(data);
+
   return (
     <>
       <div className="p-12">
@@ -81,7 +83,7 @@ const WeatherDetails = ({ data }: WeatherDetailsProps) => {
           <div className="bg-white/50 flex p-4 items-center justify-center gap-6 rounded-xl">
             <div className="text-2xl">
               <h3>Feels Like</h3>
-              <h3>{data.current.feelslike_f} °</h3>
+              <h3>{data.current.feelslike_c} °</h3>
             </div>
             <div className="text-5xl">
               <CiTempHigh fontSize={40} />
